@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>React</title>
+   <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/black.css">
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js/styles/github.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <h1>React</h1>
+      </section>
+
+      <section>
+        <h2>Empezar con React</h2>
+        <ul>
+          <li>¿Qué es React?</li>
+          <li>Entorno de desarrollo recomendado</li>
+          <li>Primer componente</li>
+        </ul>
+      </section>
+      <section>
+        <h2>¿Qué es React?</h2>
+        <ul>
+            <li>⚛️ Librería de JS para construir UI</li>
+            <li>📦 Desarrollada por Meta (Facebook)</li>
+            <li>🔁 Usa componentes para construir la UI de forma modular</li>
+            <li>🔄 flujo de datos unidireccional</li>
+            <li>🧠 Forma declarativa</li>
+        </ul>
+        </section>
+            <section>
+            <h2>Ventajas de React</h2>
+            <ul>
+                <li>✅ Basado en componentes reutilizables</li>
+                <li>⚡ Actualizaciones rápidas con Virtual DOM</li>
+                <li>🎯 Unidireccional: flujo de datos predecible</li>
+                <li>🔧 Gran ecosistema y comunidad</li>
+                <li>🧠 Ideal para aplicaciones interactivas y complejas</li>
+                <li>📦 Integración sencilla con otras bibliotecas o frameworks</li>
+                <li>📱 Compatible con desarrollo móvil (React Native)</li>
+            </ul>
+            </section>
+      <section>
+        <h2>Describir la interfaz de usuario</h2>
+        <ul>
+          <li>JSX y componentes</li>
+          <li>Árbol de componentes</li>
+          <li>Funciones puras</li>
+        </ul>
+      </section>
+        <section>
+        <h2>¿Qué es JSX?</h2>
+        <ul>
+            <li>📝 Sintaxis que combina JavaScript y HTML</li>
+            <li>⚙️ Transpilado a llamadas `React.createElement`</li>
+            <li>🔒 Permite usar expresiones dentro del marcado</li>
+            <li>📦 Soporta atributos, componentes y estructuras condicionales</li>
+        </ul>
+        </section>
+        <section>
+  <h2>JSX => JS</h2>
+  <pre><code class="language-tsx">
+// JSX
+const element = (
+  &lt;h1 className="saludo"&gt;Hola, mundo&lt;/h1&gt;
+);
+  </code></pre>
+  <pre><code class="language-ts">
+// Equivalente sin JSX
+const element = React.createElement(
+  'h1',
+  { className: 'saludo' },
+  'Hola, mundo'
+);
+  </code></pre>
+</section>
+         <section>
+        <h2>Escribir marcado con JSX</h2>
+        <ul>
+          <li>Sintaxis JSX</li>
+          <li>Expresiones dentro de JSX</li>
+        </ul>
+        <pre><code class="language-tsx">
+const name = 'Ada';
+const element = &lt;h1&gt;Hola, {name}&lt;/h1&gt;;
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Agregar estilos</h2>
+        <ul>
+          <li>Usar el atributo `style`</li>
+          <li>Clases CSS</li>
+        </ul>
+        <pre><code class="language-tsx">
+&lt;button style={{ backgroundColor: 'blue' }}&gt;Click&lt;/button&gt;
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Mostrar datos</h2>
+        <ul>
+          <li>Interpolación</li>
+          <li>Funciones de formato</li>
+        </ul>
+        <pre><code class="language-tsx">
+const user = { name: 'Grace Hopper' };
+&lt;p&gt;Hola, {user.name}&lt;/p&gt;
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Condicionales</h2>
+        <ul>
+          <li>Operador ternario</li>
+          <li>Renderizado condicional</li>
+        </ul>
+        <pre><code class="language-tsx">
+{isLoggedIn ? &lt;LogoutButton /&gt; : &lt;LoginButton /&gt;}
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Listas</h2>
+        <ul>
+          <li>Uso de map</li>
+          <li>Keys únicas</li>
+        </ul>
+        <pre><code class="language-tsx">
+const list = items.map(item =&gt;
+  &lt;li key={item.id}&gt;{item.name}&lt;/li&gt;
+);
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Eventos</h2>
+        <ul>
+          <li>Eventos en JSX</li>
+          <li>Funciones manejadoras</li>
+        </ul>
+        <pre><code class="language-tsx">
+function handleClick() {
+  alert('Hiciste clic');
+}
+&lt;button onClick={handleClick}&gt;Clic&lt;/button&gt;
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Actualizar la pantalla</h2>
+        <ul>
+          <li>useState</li>
+        </ul>
+        <pre><code class="language-tsx">
+const [count, setCount] = useState(0);
+&lt;button onClick={() =&gt; setCount(count + 1)}&gt;{count}&lt;/button&gt;
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Usar hooks</h2>
+        <ul>
+          <li>useState</li>
+          <li>useEffect</li>
+        </ul>
+        <pre><code class="language-tsx">
+useEffect(() =&gt; {
+  document.title = `Contador: ${count}`;
+}, [count]);
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Compartir datos entre componentes</h2>
+        <ul>
+          <li>Props</li>
+          <li>Lifting state up</li>
+        </ul>
+        <pre><code class="language-tsx">
+function Welcome({ name }: { name: string }) {
+  return &lt;h1&gt;Hola, {name}&lt;/h1&gt;;
+}
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Contexto</h2>
+        <ul>
+          <li>Context API</li>
+        </ul>
+        <pre><code class="language-tsx">
+const ThemeContext = createContext('light');
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Ref y el DOM</h2>
+        <ul>
+          <li>useRef para elementos</li>
+        </ul>
+        <pre><code class="language-tsx">
+const inputRef = useRef(null);
+useEffect(() =&gt; inputRef.current?.focus(), []);
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>UseEffect</h2>
+        <ul>
+          <li>Efectos secundarios</li>
+        </ul>
+        <pre><code class="language-tsx">
+useEffect(() =&gt; {
+  fetchData().then(setData);
+}, []);
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Renderizado asincrónico</h2>
+        <ul>
+          <li>Suspense y lazy</li>
+        </ul>
+        <pre><code class="language-tsx">
+const LazyComponent = React.lazy(() =&gt; import('./LazyComponent'));
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Errores</h2>
+        <ul>
+          <li>Manejo de errores con límites</li>
+        </ul>
+        <pre><code class="language-tsx">
+// ErrorBoundary debe implementar componentDidCatch
+        </code></pre>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+<script src="https://unpkg.com/reveal.js/plugin/highlight/highlight.js"></script>
+
+   <script>
+
+  Reveal.initialize({
+    plugins: [ RevealHighlight ]
+  });
+    </script>
+</body>
+</html>

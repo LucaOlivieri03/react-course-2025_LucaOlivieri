@@ -1,12 +1,12 @@
+import { ToDoSingleItem } from "./ToDoSingleItem";
+
 export function TodoItems(props: any) {
 
     return (
         <div className="items">
-            {props.items.map( (each: any) => {
-                return ( <div className="todo-item">
-                            {each.description} <button onClick={() => props.onRemove(each.id)} >X</button>
-                        </div>)
-            })}
-  </div>
-    )
+            {props.items.map((each:any) => (
+                <ToDoSingleItem item={each} onRemove={props.onRemove} onChangeDone={props.onChangeDone} key={each.id}/>
+            ))}
+        </div>
+    );
 }

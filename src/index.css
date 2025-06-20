@@ -81,20 +81,57 @@ button:focus-visible {
 }
 
 .todo-item {
-    background-color: black;
-    border: 1px solid darkgray;
+    border-top: 1px solid darkgray;
+}
+
+.todo-item-description{
     display: flex;
     justify-content: space-between;
 }
+
+.todo-item-date{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: gray;  
+}
+
+.todo-item-buttons{
+    display:flex;
+    gap: 10px;
+}
 .header {
   padding: 16px;
-  background-color: black;
-}
+  display:flex;
+  justify-content: space-around;
+  flex-direction: row;;
+  align-items: center;
+  font-size: 30px;
+} 
 
 .done {
   text-decoration: line-through;
+  color: gray;
 }
 
-.items {
-  border: 5px solid darkblue;
+.button-done{
+  opacity: 0.5;
 }
+
+.item-count{
+  font-size: 1.5em;
+}
+
+.header-input{
+  height:2.5rem;
+  width: 15rem;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size:0.55em
+}
+
+.todo-List{
+  background-color: black;
+  box-shadow: 0px 0px 30px rgba(216, 216, 216, 0.2);
+  border-radius: 10px;
+}
+

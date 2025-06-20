@@ -7,12 +7,16 @@ export function NewTodoItem(props: any) {
     <div className="header">
         <label htmlFor="todoInput">Todo: </label>
         <input 
+            className="header-input"
+            placeholder="Agrega un item"
             type="text" 
             id="todoInput"
             onChange={(anEvent) => setDescription(anEvent.target.value)}
             value={description}
             />
-        <button onClick={() => props.onAdd(description)}>+</button>
+        <button onClick={() => {
+            props.onAdd(description);
+            setDescription('');}}>+</button>
   </div>
     )
 }
